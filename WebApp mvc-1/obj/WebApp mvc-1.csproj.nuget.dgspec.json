@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rushikesh\\Desktop\\github\\.NET-\\WebApp mvc-1\\WebApp mvc-1.csproj": {}
+    "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\WebApp mvc-1\\WebApp mvc-1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rushikesh\\Desktop\\github\\.NET-\\WebApp mvc-1\\WebApp mvc-1.csproj": {
+    "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\WebApp mvc-1\\WebApp mvc-1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET-\\WebApp mvc-1\\WebApp mvc-1.csproj",
+        "projectUniqueName": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\WebApp mvc-1\\WebApp mvc-1.csproj",
         "projectName": "WebApp mvc-1",
-        "projectPath": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET-\\WebApp mvc-1\\WebApp mvc-1.csproj",
+        "projectPath": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\WebApp mvc-1\\WebApp mvc-1.csproj",
         "packagesPath": "C:\\Users\\Rushikesh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET-\\WebApp mvc-1\\obj\\",
+        "outputPath": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\WebApp mvc-1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rushikesh\\AppData\\Roaming\\NuGet\\NuGet.Config",
