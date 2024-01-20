@@ -1,2 +1,2 @@
 # .NET-
-this repo .net codes
+this repo .net applications developement codes
