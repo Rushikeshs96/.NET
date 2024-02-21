@@ -16,7 +16,7 @@ namespace BookManagment.Controllers
         public IActionResult Index()
         {
             List<Category> objCategorylist = _db.categories.ToList();
-            return View();
+            return View(objCategorylist);
         }
     }
 }
