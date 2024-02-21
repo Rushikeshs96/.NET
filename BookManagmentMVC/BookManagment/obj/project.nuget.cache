@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "1XWqKlrDqsQ7tOQr7+CjED1p5eLOvg/9TDb/6hfHKVNVIWMdFegS0o3Vnww2Zjbwyu/LVYqwHnk9KL4sUjR6GA==",
+  "dgSpecHash": "oM0rK6Wf+VCBeoynZLZP60FrbrOnQWTUN/sUIWVs1yNCGj5ME2BSHsw7+5VK5u6O4VL60bOSOjpMFd+b1SG7sQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\BookManagmentMVC\\BookManagment\\BookManagment.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.27\\microsoft.entityframeworkcore.6.0.27.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.27\\microsoft.entityframeworkcore.abstractions.6.0.27.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.27\\microsoft.entityframeworkcore.analyzers.6.0.27.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.1\\microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.logging\\6.0.0\\microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
