@@ -35,5 +35,36 @@ namespace BookManagment.Controllers
             }
             return View();
         }
+
+
+        public IActionResult Edit(int id) //the is passed from view as asp-route-id="@obj.Id"
+        {
+            if(id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category ? categoryFromDb = _db.categories.FirstOrDefault(c => c.Id == id); ;
+            // above or belows options works same
+           // Category ?  categoryFromDb = _db.categories.Find(id);
+          //  Category ? categoryFromDb = _db.categories.Where(u=>u.Id == id).FirstOrDefault(); 
+
+            if(categoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDb);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.categories.Update(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
     }
 }
