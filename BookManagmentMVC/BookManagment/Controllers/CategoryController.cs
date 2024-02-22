@@ -66,5 +66,33 @@ namespace BookManagment.Controllers
             }
             return View();
         }
+
+        public IActionResult Delete(int ? id) 
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Category? categoryFromDb = _db.categories.FirstOrDefault(c => c.Id == id); 
+            if (categoryFromDb == null)
+            {
+                return NotFound();
+            }
+            return View(categoryFromDb);
+        }
+
+        [HttpPost,ActionName("Delete")]
+        public IActionResult DeletePost(int ? id)
+        {
+            Category obj = _db.categories.Find(id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+
+            _db.categories.Remove(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
