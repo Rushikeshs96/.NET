@@ -27,9 +27,13 @@ namespace BookManagment.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
-            _db.categories.Add(obj);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _db.categories.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
