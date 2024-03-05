@@ -1,7 +1,9 @@
 ﻿using DOTNET_JWT.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 
 namespace DOTNET_JWT.Controllers
 {
@@ -17,9 +19,10 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "customer")] // Allow all users to access
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
-            if(_jwtContext.Books == null)
+            if (_jwtContext.Books == null)
             {
                 return NotFound();
             }
@@ -27,24 +30,24 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpGet("{id}")]
+        [AllowAnonymous] // Allow all users to access
         public async Task<ActionResult<Book>> GetBook(int id)
         {
             if (_jwtContext.Books == null)
             {
                 return NotFound();
             }
-            var movie = await _jwtContext.Books.FindAsync(id);
+            var book = await _jwtContext.Books.FindAsync(id);
 
-            if (movie == null)
+            if (book == null)
             {
                 return NotFound();
             }
-
-            return movie;
+            return book;
         }
 
-
         [HttpPut("{id}")]
+        [Authorize(Roles = "admin")] // Only admin role can access
         public async Task<IActionResult> PutBook(int id, Book book)
         {
             if (id != book.Id)
@@ -69,15 +72,14 @@ namespace DOTNET_JWT.Controllers
                     throw;
                 }
             }
-
             return NoContent();
         }
 
-       
         [HttpPost]
-        public async Task<ActionResult<Book>> PostMovie(Book book)
+        [Authorize(Roles = "admin")] // Only admin role can access
+        public async Task<ActionResult<Book>> PostBook(Book book)
         {
-            if (_jwtContext.Books== null)
+            if (_jwtContext.Books == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Book'  is null.");
             }
@@ -87,8 +89,8 @@ namespace DOTNET_JWT.Controllers
             return CreatedAtAction("GetBook", new { id = book.Id }, book);
         }
 
-       
         [HttpDelete("{id}")]
+        [Authorize(Roles = "admin")] // Only admin role can access
         public async Task<IActionResult> DeleteBook(int id)
         {
             if (_jwtContext.Books == null)
