@@ -10,6 +10,5 @@ namespace DOTNET_JWT.Models
         public string? Author { get; set; }
         public int? Price { get; set; }
         public string? BookType { get; set; }
-        public DateOnly? CreateDate { get; set; }
     }
 }
