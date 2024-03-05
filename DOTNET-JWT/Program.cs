@@ -1,3 +1,6 @@
+using DOTNET_JWT.Models;
+using System.Text.Json.Serialization;
+
 namespace DOTNET_JWT
 {
     public class Program
@@ -12,6 +15,13 @@ namespace DOTNET_JWT
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<dotnetjwtContext>();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+                options.JsonSerializerOptions.WriteIndented = true;
+            });
 
             var app = builder.Build();
 
