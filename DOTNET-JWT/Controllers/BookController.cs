@@ -19,7 +19,7 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "customer")] // Allow all users to access
+        [Authorize(Roles = "customer")] //only customer can accesee the getbook()
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {
             if (_jwtContext.Books == null)
@@ -30,7 +30,7 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous] // Allow all users to access
+        [AllowAnonymous] //anyone can accesee this
         public async Task<ActionResult<Book>> GetBook(int id)
         {
             if (_jwtContext.Books == null)
@@ -47,7 +47,7 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpPut("{id}")]
-        [Authorize(Roles = "admin")] // Only admin role can access
+        [Authorize(Roles = "admin")] // Only admin role can accessthis belws method
         public async Task<IActionResult> PutBook(int id, Book book)
         {
             if (id != book.Id)
@@ -76,7 +76,7 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "admin")] // Only admin role can access
+        [Authorize(Roles = "admin")] // Only admin role can access this
         public async Task<ActionResult<Book>> PostBook(Book book)
         {
             if (_jwtContext.Books == null)
@@ -90,7 +90,7 @@ namespace DOTNET_JWT.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Roles = "admin")] // Only admin role can access
+        [Authorize(Roles = "admin")] 
         public async Task<IActionResult> DeleteBook(int id)
         {
             if (_jwtContext.Books == null)
