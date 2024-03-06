@@ -24,18 +24,16 @@ namespace DOTNET_JWT.Controllers
         [HttpPost("login")]
         public async Task<ActionResult<string>> Login(Login login)
         {
-            // Your authentication logic here
+           
             var user = await _jwtContext.Logins.FirstOrDefaultAsync(u => u.LoginId == login.LoginId && u.Password == login.Password);
 
             if (user != null)
             {
-                // Authentication successful, generate JWT token
                 var token = GenerateJwtToken(user.Id.ToString(), user.Role);
                 return Ok(new { token });
             }
             else
             {
-                // Authentication failed
                 return Unauthorized();
             }
         }
