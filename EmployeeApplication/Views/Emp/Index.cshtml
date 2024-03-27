@@ -1,0 +1,92 @@
+﻿@model List<Emp>
+
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">
+                Employee list
+            </h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Emp" asp-action="Create" class="btn btn-primary">
+                Create New Employee
+            </a>
+        </div>
+    </div>
+
+    <br />
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Index
+                </th>
+                <th>
+                    First Name
+                </th>
+                <th>
+                    Last Name
+                </th>
+                <th>
+                    DOB
+                </th>
+                <th>
+                    Contact
+                </th>
+                <th>
+                    Email
+                </th>
+                <th>
+                    Photo
+                </th>
+                <th>
+                    EDIT
+                </th>
+                <th>
+                    Delete
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td>@obj.Id</td>
+                    <td>@obj.Fname</td>
+                    <td>@obj.Lname</td>
+                    <td>@obj.Dob</td>
+                    <td>@obj.Contact</td>
+                    <td>@obj.Email</td>
+                    <td>
+                        @if (obj.Photo != null && obj.Photo.Length > 0)
+                        {
+                            <img src="data:image;base64,@Convert.ToBase64String(obj.Photo)" alt="Employee Photo" class="img-fluid" />
+                        }
+                        else
+                        {
+                            <span>No Photo</span>
+                        }
+                    </td>
+
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Emp" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary ">
+                                Edit
+                            </a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Emp" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger ">
+                                Delete
+                            </a>
+                        </div>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
