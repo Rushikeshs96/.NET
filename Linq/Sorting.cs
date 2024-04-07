@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class Sorting
     {
-        public static void Main(string[] args)
+        public static void Main2(string[] args)
         {
             string[] words = { "the", "quick", "brown", "fox", "jumps" };
 //1
