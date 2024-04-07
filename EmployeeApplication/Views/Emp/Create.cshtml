@@ -41,6 +41,29 @@
             <input asp-for="Photo" type="file" class="form-control" />
             <span asp-validation-for="Photo" class="text-danger"></span>
         </div>
+        <div class="mb-3">
+            <label>State</label>
+            <select asp-for="StateId" class="form-control">
+                <option value="">-- Select State --</option>
+                @foreach (var state in ViewBag.States)
+                {
+                    <option value="@state.StateId">@state.StateName</option>
+                }
+            </select>
+            <span asp-validation-for="StateId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label>City</label>
+            <select asp-for="CityId" class="form-control">
+                <option value="">-- Select City --</option>
+                @foreach (var city in ViewBag.Cities)
+                {
+                    <option value="@city.CityId">@city.CityName</option>
+                }
+            </select>
+            <span asp-validation-for="CityId" class="text-danger"></span>
+        </div>
+      
 
         <div class="row">
             <div class="col-6">
