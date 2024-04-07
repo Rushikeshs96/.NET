@@ -17,7 +17,7 @@ namespace Linq
                          orderby word.Length descending
                          select word;
 
-            // lambad expression
+            // lambda expression
             var len = words.OrderBy(x => x.Length);
 
             foreach(var word in len)
@@ -33,7 +33,7 @@ namespace Linq
                          orderby word.Length descending
                          select word;
 
-            // lambad expression
+            // lambda expression
             var wordl = words.OrderByDescending(x => x.Length);
 
             foreach (var word in wordl)
@@ -49,7 +49,7 @@ namespace Linq
                           orderby word.Substring(0,1)
                           select word;
 
-            // lambad expression
+            // lambda expression
             var alpha = words.OrderBy(x=>x.Substring(0,1));
 
             foreach (var word in alpha)
@@ -65,7 +65,7 @@ namespace Linq
                            orderby word.Length, word.Substring(0,1)
                            select word;
 
-            // lambad expression
+            // lambda expression
             var lenalpha = words.OrderBy(x =>x.Length).ThenBy(x => x.Substring(0,1));
 
             foreach (var word in lenalpha)
