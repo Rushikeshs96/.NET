@@ -11,6 +11,8 @@ namespace Linq
         public static void Main2(string[] args)
         {
             string[] words = { "the", "quick", "brown", "fox", "jumps" };
+
+
 //1
             // sorting by length of word - query syntaxt
             var length = from word in words

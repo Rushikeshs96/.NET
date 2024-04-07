@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class SetOperations
     {
-        public static void Main(String[] args)
+        public static void Main3(String[] args)
         {
             int[] list1 = { 1, 2, 3, 4, 5 };
             int[] list2 = { 4,5,6, 7, 8, 9 };
