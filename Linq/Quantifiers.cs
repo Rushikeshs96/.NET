@@ -29,13 +29,25 @@ namespace Linq
             Console.WriteLine();
 
             //checking weather any fruit name starting with o
-
             var oname=from market in Markets
                       where market.Fruits.Any(x=>x.Substring(0,1)=="o")
                       select market.MarektName;
 
            
             foreach (var name in oname)
+            {
+                Console.WriteLine(name);
+            }
+            Console.WriteLine();
+
+
+            //checking weather awhich market contains fruit kiwi
+            var kiwi = from market in Markets
+                        where market.Fruits.Contains("kiwi")
+                        select market.MarektName;
+
+
+            foreach (var name in kiwi)
             {
                 Console.WriteLine(name);
             }
