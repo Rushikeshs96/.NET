@@ -66,9 +66,9 @@ namespace Linq
                            select word;
 
             // lambad expression
-            //var lenalpha = words.OrderBy(x =>x.Length || x.Substring(0,1);
+            var lenalpha = words.OrderBy(x =>x.Length).ThenBy(x => x.Substring(0,1));
 
-            foreach (var word in alphalen)
+            foreach (var word in lenalpha)
             {
                 Console.WriteLine(word);
             }
