@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class Join
     {
-        public static void Main(String[] args)
+        public static void Main8(String[] args)
         {
             var products = new[]
             {
