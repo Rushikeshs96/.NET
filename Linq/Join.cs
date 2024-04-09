@@ -34,6 +34,26 @@ namespace Linq
             {
                 Console.WriteLine(item.ProductName+" "+item.CategoryName);
             }
+
+
+
+            var productcopy = new[]
+           {
+                new{ProductName="Cola", CategoryId=0},
+                 new{ProductName="Tea", CategoryId=0},
+                  new{ProductName="Apple", CategoryId=1},
+                   new{ProductName="Kiwi", CategoryId=1},
+                    new{ProductName="Carrot", CategoryId=2},
+            };
+
+            //concat operations
+
+            var concatfun = products.Concat(productcopy);
+
+            foreach(var item in concatfun)
+            {
+                Console.WriteLine(item.ProductName + " " + item.CategoryId);
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class GroupingData
     {
-        public static void Main(string[] args)
+        public static void Main9(string[] args)
         {
             var numbers = new[]
             {
