@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class Partitioning
     {
-        public static void Main(string[] args)
+        public static void Main7(string[] args)
         {
             int[] list1 = { 1, 2, 3, 4, 5 };
 
