@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class Projection
     {
-        public static void Main(String[] args)
+        public static void Main6(String[] args)
         {
             var words = new String[] { "an", "apple", "a", "day" };
 
