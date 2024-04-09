@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class GroupingData
     {
-        public static void Main9(string[] args)
+        public static void Main(string[] args)
         {
             var numbers = new[]
             {
@@ -16,7 +16,7 @@ namespace Linq
                  new{Number="two",Type="even"},
                   new{Number="three",Type="odd"},
                    new{Number="four",Type="even"},
-                    new{Number="five",Type="odd"},
+                    new{Number="five",Type="odd "},
             };
 
 
@@ -27,6 +27,16 @@ namespace Linq
             foreach( var number in query)
             {
                 Console.WriteLine(number.Type+" "+number.Count);
+            }
+
+
+
+            // default if empty opeartaion returns default value if value is not present
+            var list = new int[] { };
+
+            foreach( var number in list.DefaultIfEmpty())
+            {
+                Console.WriteLine(number);
             }
         }
     }
