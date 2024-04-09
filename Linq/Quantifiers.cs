@@ -8,7 +8,7 @@ namespace Linq
 {
     internal class Quantifiers
     {
-        public static void Main(string[] args)
+        public static void Main5(string[] args)
         {
             var Markets = new[]
             {
