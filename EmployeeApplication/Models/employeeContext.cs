@@ -46,10 +46,10 @@ namespace EmployeeApplication.Models
                     .HasMaxLength(45)
                     .HasColumnName("City");
 
-                entity.HasOne(d => d.State)
-                    .WithMany(p => p.Cities)
-                    .HasForeignKey(d => d.StateId)
-                    .HasConstraintName("StateId");
+                entity.HasOne(d => d.State);
+                    //.WithMany(p => p.Cities)
+                    //.HasForeignKey(d => d.StateId)
+                    //.HasConstraintName("StateId");
             });
 
             modelBuilder.Entity<Emp>(entity =>
