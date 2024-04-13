@@ -1,5 +1,7 @@
 ﻿using EmployeeApplication.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace EmployeeApplication.Controllers
 {
@@ -14,14 +16,16 @@ namespace EmployeeApplication.Controllers
 
         public IActionResult Index()
         {
-            List<Emp> employees = _context.Emps.ToList();
-            return View(employees); 
+            var employee = _context.Emps.Include(e => e.State).Include(e => e.State.Cities).ToList();
+            return View(employee);
         }
 
 
 
         public IActionResult Create()
         {
+           // ViewBag.StateId = new SelectList(_context.States, "StateId", "StateName");
+           ViewBag.States = new SelectList (_context.States, "StateId","StateName");
             return View();
         }
 
@@ -35,25 +39,27 @@ namespace EmployeeApplication.Controllers
                     using (var memoryStream = new MemoryStream())
                     {
                         photo.CopyTo(memoryStream);
-                        obj.Photo= memoryStream.ToArray();
+                        obj.Photo = memoryStream.ToArray();
                     }
                 }
                 _context.Emps.Add(obj);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            //  ViewBag.StateId = new SelectList(_context.States, "StateId", "StateName");
+            ViewBag.States = new SelectList(_context.States, "StateId", "StateName");
             return View();
         }
 
 
-        public IActionResult Edit(int id) 
+        public IActionResult Edit(int id)
         {
             if (id == null)
             {
                 return NotFound();
             }
             Emp? EmpFromDb = _context.Emps.FirstOrDefault(c => c.Id == id); ;
-         
+
 
             if (EmpFromDb == null)
             {
@@ -63,7 +69,7 @@ namespace EmployeeApplication.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Emp obj,IFormFile photo )
+        public IActionResult Edit(Emp obj, IFormFile photo)
         {
             if (ModelState.IsValid)
             {
@@ -79,6 +85,7 @@ namespace EmployeeApplication.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.StateId = new SelectList(_context.States, "StateId", "StateName");
             return View();
         }
 
@@ -111,6 +118,6 @@ namespace EmployeeApplication.Controllers
             return RedirectToAction("Index");
         }
 
-      
+
     }
 }

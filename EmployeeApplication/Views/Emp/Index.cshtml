@@ -37,6 +37,9 @@
                     Email
                 </th>
                 <th>
+                    State
+                </th>
+                <th>
                     Photo
                 </th>
                 <th>
@@ -58,6 +61,7 @@
                     <td>@obj.Dob</td>
                     <td>@obj.Contact</td>
                     <td>@obj.Email</td>
+                    <td>@obj.State?.StateName</td>  
                     <td>
                         @if (obj.Photo != null && obj.Photo.Length > 0)
                         {

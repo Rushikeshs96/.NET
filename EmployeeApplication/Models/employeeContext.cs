@@ -25,7 +25,7 @@ namespace EmployeeApplication.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;database=employee;user=root;password=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
+                optionsBuilder.UseMySql("server=localhost;database=employee;uid=root;pwd=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
             }
         }
 
@@ -40,26 +40,23 @@ namespace EmployeeApplication.Models
 
                 entity.HasIndex(e => e.StateId, "StateId_idx");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.CityName).HasMaxLength(45);
 
-                entity.Property(e => e.City1)
-                    .HasMaxLength(45)
-                    .HasColumnName("City");
-
-                entity.HasOne(d => d.State);
-                    //.WithMany(p => p.Cities)
-                    //.HasForeignKey(d => d.StateId)
-                    //.HasConstraintName("StateId");
+                entity.HasOne(d => d.State)
+                    .WithMany(p => p.Cities)
+                    .HasForeignKey(d => d.StateId)
+                    .HasConstraintName("StateId");
             });
 
             modelBuilder.Entity<Emp>(entity =>
             {
                 entity.ToTable("emp");
 
-              
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.HasIndex(e => e.StateId, "StateId_idx");
 
-                entity.Property(e => e.Dob).HasColumnName("DOB");
+                entity.Property(e => e.Dob)
+                    .HasColumnType("datetime")
+                    .HasColumnName("DOB");
 
                 entity.Property(e => e.Email).HasMaxLength(45);
 
@@ -72,17 +69,20 @@ namespace EmployeeApplication.Models
                     .HasColumnName("LName");
 
                 entity.Property(e => e.Password).HasMaxLength(45);
+
+                entity.HasOne(d => d.State)
+                    .WithMany(p => p.Emps)
+                    .HasForeignKey(d => d.StateId)
+                    .HasConstraintName("StateIds");
             });
 
             modelBuilder.Entity<State>(entity =>
             {
                 entity.ToTable("state");
 
-                entity.Property(e => e.Id).ValueGeneratedNever();
+                entity.Property(e => e.StateId).ValueGeneratedNever();
 
-                entity.Property(e => e.State1)
-                    .HasMaxLength(45)
-                    .HasColumnName("State");
+                entity.Property(e => e.StateName).HasMaxLength(45);
             });
 
             OnModelCreatingPartial(modelBuilder);
