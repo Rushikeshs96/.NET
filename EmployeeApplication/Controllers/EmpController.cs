@@ -24,8 +24,9 @@ namespace EmployeeApplication.Controllers
 
         public IActionResult Create()
         {
-           // ViewBag.StateId = new SelectList(_context.States, "StateId", "StateName");
            ViewBag.States = new SelectList (_context.States, "StateId","StateName");
+           ViewBag.Cities = new SelectList(new List<City>(), "CityId", "CityName"); // Empty list initially
+
             return View();
         }
 
@@ -42,14 +43,19 @@ namespace EmployeeApplication.Controllers
                         obj.Photo = memoryStream.ToArray();
                     }
                 }
+
+                
                 _context.Emps.Add(obj);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //  ViewBag.StateId = new SelectList(_context.States, "StateId", "StateName");
             ViewBag.States = new SelectList(_context.States, "StateId", "StateName");
             return View();
         }
+
+
+       
+
 
 
         public IActionResult Edit(int id)
@@ -65,6 +71,7 @@ namespace EmployeeApplication.Controllers
             {
                 return NotFound();
             }
+            ViewBag.States = new SelectList(_context.States, "StateId", "StateName");
             return View(EmpFromDb);
         }
 
@@ -85,7 +92,7 @@ namespace EmployeeApplication.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.StateId = new SelectList(_context.States, "StateId", "StateName");
+            ViewBag.States = new SelectList(_context.States, "StateId", "StateName");
             return View();
         }
 

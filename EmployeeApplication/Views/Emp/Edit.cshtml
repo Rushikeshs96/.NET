@@ -1,6 +1,10 @@
 ﻿@model Emp
 
-<form method="post" enctype="multipart/form-data">
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary">Edit Employee</h2>
@@ -34,6 +38,14 @@
             <label>Photo</label>
             <input asp-for="Photo" type="file" class="form-control" />
             <span asp-validation-for="Photo" class="text-danger"></span>
+        </div>
+
+        <div>
+            <label asp-for="StateId">State:</label>
+            <select asp-for="StateId" asp-items="ViewBag.States" class="form-control">
+                <option value="">Select State</option>
+            </select>
+            <span asp-validation-for="StateId" class="text-danger"></span>
         </div>
 
         <br />
