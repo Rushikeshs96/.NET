@@ -4,8 +4,13 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <ul>
+    <ul class="text-start">
         @foreach(var items in ViewBag.country)
+        {
+            <li>@items</li>
+        }
+
+         @foreach(var items in (List<String>)ViewData["City"]) // for viewdata typecsating is required to check what is its returning
         {
             <li>@items</li>
         }
