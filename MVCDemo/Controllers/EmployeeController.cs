@@ -28,8 +28,14 @@ namespace MVCDemo.Controllers
 
         public ActionResult Details(int id)
         {
-            var emp= _context.Employees.FirstOrDefault(s=>s.Id==id);
+            var emp= _context.Employees?.Single(s=>s.Id==id);
             return View(emp);
+        }
+
+        public IActionResult IndexAction()
+        {
+            List<Employee> list= _context.Employees?.ToList();
+            return View(list);
         }
     }
 }
