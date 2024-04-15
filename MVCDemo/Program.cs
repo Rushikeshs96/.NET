@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using MVCDemo.DAL;
+
 namespace MVCDemo
 {
     public class Program
@@ -5,6 +8,10 @@ namespace MVCDemo
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+
+            builder.Services.AddDbContext<EmployeeContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("EmployeeConnection")));
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
