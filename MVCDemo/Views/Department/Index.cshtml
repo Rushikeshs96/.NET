@@ -1,0 +1,13 @@
+﻿@model  IEnumerable<MVCDemo.Models.Department>
+
+@using MVCDemo.Models
+
+<h1>Departments</h1>   @*using html helpers for creating links of departments*@
+<ul>
+    @foreach (Department item in Model)
+    {
+        <li>
+            @Html.ActionLink(item.Name,"indexforDept","Employee",new {departmentId = item.Id})
+        </li>
+    }
+</ul>

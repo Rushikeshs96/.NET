@@ -1,0 +1,15 @@
+﻿@model IEnumerable<MVCDemo.Models.Employee>
+@using MVCDemo.Models
+
+<h1>List of Employess using by generating hyperlinks</h1>   @*using html helpers for creating links*@
+<div>
+<ul>
+    @foreach (Employee employee in Model)
+    {
+        <li>
+            @Html.ActionLink(employee.Name+" "+employee.City,"Details",new {id = employee.Id})
+        </li>
+    }
+</ul>
+@Html.ActionLink("Back to Department","Index","Department")
+</div>
