@@ -38,7 +38,7 @@ namespace MVCDemo.Controllers
             return View(list);
         }
 
-        public IActionResult indexforDept(int departmentId)
+        public IActionResult IndexForDept(int departmentId)
         {
             List<Employee>? list = _context.Employees?.Where(s=>s.DepartmentId==departmentId).ToList();  
             return View(list);
