@@ -43,5 +43,11 @@ namespace MVCDemo.Controllers
             List<Employee>? list = _context.Employees?.Where(s=>s.DepartmentId==departmentId).ToList();  
             return View(list);
         }
+
+        public IActionResult EmployeeList()
+        {
+            var list = _context.Employees?.ToList();    
+            return View(list);
+        }
     }
 }
