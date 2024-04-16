@@ -28,26 +28,32 @@ namespace MVCDemo.Controllers
 
         public ActionResult Details(int id)
         {
-            var emp= _context.Employees?.Single(s=>s.Id==id);
+            var emp = _context.Employees?.Single(s => s.Id == id);
             return View(emp);
         }
 
         public IActionResult IndexAction()
         {
-            List<Employee>? list= _context.Employees?.ToList();
+            List<Employee>? list = _context.Employees?.ToList();
             return View(list);
         }
 
         public IActionResult IndexForDept(int departmentId)
         {
-            List<Employee>? list = _context.Employees?.Where(s=>s.DepartmentId==departmentId).ToList();  
+            List<Employee>? list = _context.Employees?.Where(s => s.DepartmentId == departmentId).ToList();
             return View(list);
         }
 
         public IActionResult EmployeeList()
         {
-            var list = _context.Employees?.ToList();    
+            var list = _context.Employees?.ToList();
             return View(list);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }
