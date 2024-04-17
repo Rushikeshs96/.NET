@@ -57,12 +57,16 @@ namespace MVCDemo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Employee emp)
+        [ActionName("Create")]
+        public IActionResult Create_Post(Employee emp)
         {
-            _context.Employees.Add(emp);
-            _context.SaveChanges();
-
-            return RedirectToAction("EmployeeList");
+            if (ModelState.IsValid)
+            {
+                _context.Employees.Add(emp);
+                _context.SaveChanges();
+                return RedirectToAction("EmployeeList");
+            }
+            return View();
         }
     }
 }
