@@ -87,5 +87,24 @@ namespace MVCDemo.Controllers
             }
             return View(emp);
         }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var emp = _context.Employees.Single(e => e.Id == id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Employee emp)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Employees.Remove(emp);
+                _context.SaveChanges();
+                return RedirectToAction("EmployeeList");
+            }
+            return View(emp);
+        }
     }
 }
