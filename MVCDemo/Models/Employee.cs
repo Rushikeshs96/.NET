@@ -7,10 +7,13 @@ namespace MVCDemo.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
         public String? Name { get; set; }
 
+        [Required]
         public string? Gender { get; set; }
 
+        [Required]
         public string? City { get; set; }
 
         public int? DepartmentId { get; set; }
