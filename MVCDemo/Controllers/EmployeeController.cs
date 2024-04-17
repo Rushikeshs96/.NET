@@ -55,5 +55,14 @@ namespace MVCDemo.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Create(Employee emp)
+        {
+            _context.Employees.Add(emp);
+            _context.SaveChanges();
+
+            return RedirectToAction("EmployeeList");
+        }
     }
 }
