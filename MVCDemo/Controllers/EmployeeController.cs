@@ -68,5 +68,24 @@ namespace MVCDemo.Controllers
             }
             return View();
         }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var emp=_context.Employees.Single(e=>e.Id== id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Employee emp)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Employees.Update(emp);
+                _context.SaveChanges();
+                return RedirectToAction("EmployeeList");
+            }
+            return View(emp);
+        }
     }
 }
