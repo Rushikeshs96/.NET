@@ -30,7 +30,7 @@ namespace MVCDemo.Controllers
         public ActionResult Details(int id)
         {
             
-            List<Employee> emp = _context.Employees.ToList();
+            var emp = _context.Employees.Single(e=>e.Id==id);
 
             return View(emp);
         }
