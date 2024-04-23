@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MVCDemo.DAL;
 using MVCDemo.Models;
 
@@ -28,9 +29,13 @@ namespace MVCDemo.Controllers
 
         public ActionResult Details(int id)
         {
-            var emp = _context.Employees?.Single(s => s.Id == id);
+            
+            List<Employee> emp = _context.Employees.ToList();
+
             return View(emp);
         }
+
+       
 
         public IActionResult IndexAction()
         {
@@ -46,8 +51,8 @@ namespace MVCDemo.Controllers
 
         public IActionResult EmployeeList()
         {
-            var list = _context.Employees?.ToList();
-            return View(list);
+            List<Employee> emp = _context.Employees.Include(e => e.Department).ToList();
+            return View(emp);
         }
 
         [HttpGet]
