@@ -33,7 +33,14 @@
                     @Html.EditorFor(model=>model.City)
                     @Html.ValidationMessageFor(model=>model.City)
                 </div>
-                <p>
+                <div>
+                    @Html.LabelFor(model=>model.Department)
+                </div>
+                <div>
+                    @Html.EditorFor(model=>model.Department.Name)
+                    @Html.ValidationMessageFor(model=>model.Department.Name)
+                </div>
+                 <p>
                     <input type="submit" value="Create">
                 </p>
             </fieldset>

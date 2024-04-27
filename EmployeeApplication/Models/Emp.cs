@@ -13,7 +13,10 @@ namespace EmployeeApplication.Models
         public string? Email { get; set; }
         public string? Password { get; set; }
         public byte[]? Photo { get; set; }
+      
         public int? StateId { get; set; }
         public virtual State? State { get; set; }
+    
+        
     }
 }
