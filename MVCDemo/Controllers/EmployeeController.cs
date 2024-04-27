@@ -111,5 +111,17 @@ namespace MVCDemo.Controllers
             }
             return View(emp);
         }
+
+        public IActionResult EmployeesByDepartment()
+        {
+            var employees=_context.Employees.Include("Department")
+                          .GroupBy(x=>x.Department.Name)
+                          .Select(y=>new DepartmentTotals
+                          {
+                              Name=y.Key,
+                              Total=y.Count()
+                          }).ToList();
+            return View(employees);
+        }
     }
 }
