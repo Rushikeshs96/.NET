@@ -1,10 +1,29 @@
 ﻿@Model
 
 <div style="font-family:Arial">
+
+    @*Html helper for textbox*@
     @Html.TextBox("Name","Rushi", new{
-        style="background-color:red",
-        title="Please enter your first Name"
+    style="background-color:red",
+    title="Please enter your first Name"
     })
 
-    
+    @*    text box with readonly*@
+    @Html.TextBox("Name","Rushi", new{
+    @class="redtextbox",
+    @readonly="true"
+    })
+
+    @*    lable html helper *@
+    @Html.Label("name","Name")
+
+    @*    textbox for password*@
+    @Html.Password("Password")
+
+    @*    multiline text area
+    *@
+    @Html.TextArea("area","Enter Text",5,20,null)
+
+    @*    hidden text box
+    *@    @Html.Hidden("id")
 </div>
