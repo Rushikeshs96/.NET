@@ -35,6 +35,9 @@ namespace MVCDemo.Controllers
             return View();
         }
 
-    
+        public IActionResult HtmlHelpers()
+        {
+            return View();
+        }
     }
 }
