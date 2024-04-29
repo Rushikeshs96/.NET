@@ -26,4 +26,12 @@
 
     @*    hidden text box not visible generally used in server side posting. used to store ids thats not shown to users
     *@    @Html.Hidden("id")
+
+    @*    dropdown list
+    *@
+    @Html.DropDownList("dropdown options",new List<SelectListItem>{
+    new SelectListItem{Text="Option 1", Value="1"},
+    new SelectListItem{Text="Option 2", Value="2"},
+    new SelectListItem{Text="Option 3", Value="3"},
+    },"select options")
 </div>
