@@ -1,5 +1,6 @@
 ﻿@Model
 
+
 <div style="font-family:Arial">
 
     @*Html helper for textbox*@
@@ -34,4 +35,8 @@
     new SelectListItem{Text="Option 2", Value="2"},
     new SelectListItem{Text="Option 3", Value="3"},
     },"select options")
+
+    @*    generating dropdown list using viewbag in below departments is viewbag name
+    *@
+    @Html.DropDownList("departments","select department")
 </div>

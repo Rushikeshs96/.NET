@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MVCDemo.DAL;
 using MVCDemo.Models;
 using System.Diagnostics;
 
@@ -7,7 +8,12 @@ namespace MVCDemo.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private readonly EmployeeContext _context;
+
+        public HomeController(EmployeeContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
@@ -37,6 +43,7 @@ namespace MVCDemo.Controllers
 
         public IActionResult HtmlHelpers()
         {
+            ViewBag.departments = new SelectList(_context.Departments, "Id", "Name");
             return View();
         }
     }
