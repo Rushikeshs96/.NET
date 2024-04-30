@@ -1,6 +1,5 @@
 ﻿@Model
 
-
 <div style="font-family:Arial">
 
     @*Html helper for textbox*@
@@ -8,25 +7,36 @@
     style="background-color:red",
     title="Please enter your first Name"
     })
+    <br/>
 
     @*    text box with readonly*@
     @Html.TextBox("Name","Rushi", new{
     @class="redtextbox",
     @readonly="true"
     })
+        <br/>
+
 
     @*    lable html helper *@
     @Html.Label("name","Name")
+        <br/>
+
 
     @*    textbox for password*@
     @Html.Password("Password")
+        <br/>
+
 
     @*    multiline text area
     *@
     @Html.TextArea("area","Enter Text",5,20,null)
+        <br/>
+
 
     @*    hidden text box not visible generally used in server side posting. used to store ids thats not shown to users
     *@    @Html.Hidden("id")
+        <br/>
+
 
     @*    dropdown list
     *@
@@ -35,8 +45,14 @@
     new SelectListItem{Text="Option 2", Value="2"},
     new SelectListItem{Text="Option 3", Value="3"},
     },"select options")
+        <br/>
 
-    @*    generating dropdown list using viewbag in below departments is viewbag name
+
+    @*    generating dropdown list using viewbag in below departments is viewbag name coming from home controller
     *@
     @Html.DropDownList("departments","select department")
+        <br/>
+
+
+
 </div>

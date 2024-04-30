@@ -114,7 +114,7 @@ namespace MVCDemo.Controllers
 
         public IActionResult EmployeesByDepartment()
         {
-            var employees=_context.Employees.Include("Department")
+            var employees=_context.Employees?.Include("Department")
                           .GroupBy(x=>x.Department.Name)
                           .Select(y=>new DepartmentTotals
                           {

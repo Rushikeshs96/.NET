@@ -43,8 +43,16 @@ namespace MVCDemo.Controllers
 
         public IActionResult HtmlHelpers()
         {
-            ViewBag.departments = new SelectList(_context.Departments, "Id", "Name");
+            ViewBag.departments = new SelectList(_context.Departments, "Id", "Name", "0");
             return View();
         }
+
+        public IActionResult RadioBtnList()
+        {
+            ViewBag.list = new List<String>() { "india", "china", "pune" };
+
+            return View();
+        }
+
     }
 }
