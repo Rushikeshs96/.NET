@@ -34,6 +34,13 @@
                     @Html.ValidationMessageFor(model=>model.City)
                 </div>
                 <div>
+                    @Html.LabelFor(model=>model.Salary)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model=>model.Salary)
+                    @Html.ValidationMessageFor(model=>model.Salary)
+                </div>
+                <div>
                     @Html.LabelFor(model=>model.Department)
                 </div>
                 <div>

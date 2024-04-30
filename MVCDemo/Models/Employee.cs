@@ -18,6 +18,9 @@ namespace MVCDemo.Models
         [DisplayFormat(NullDisplayText = "NA")]              //it will display NA if from db is null
         public string? City { get; set; }
 
+        [DisplayFormat(NullDisplayText = "NA")]              //it will display NA if from db is null
+        public int? Salary { get; set; }
+
         public int? DepartmentId { get; set; }
 
         public Department? Department { get; set; }
