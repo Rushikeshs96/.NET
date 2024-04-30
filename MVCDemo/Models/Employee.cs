@@ -8,12 +8,14 @@ namespace MVCDemo.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name = "Full Name")]
         public String? Name { get; set; }
 
         [Required]
         public string? Gender { get; set; }
 
         [Required]
+        [DisplayFormat(NullDisplayText = "NA")]              //it will display NA if from db is null
         public string? City { get; set; }
 
         public int? DepartmentId { get; set; }
