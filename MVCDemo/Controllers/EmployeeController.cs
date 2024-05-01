@@ -16,7 +16,7 @@ namespace MVCDemo.Controllers
 
         public IActionResult Index()
         {
-            Employee emp = new Employee()
+            Employee emp = new ()
             {
                 Id = 1,
                 Name = "rushi",
@@ -29,13 +29,13 @@ namespace MVCDemo.Controllers
 
         public ActionResult Details(int id)
         {
-            
-            var emp = _context.Employees.Single(e=>e.Id==id);
 
+            var emp = _context.Employees?.SingleOrDefault(e => e.Id == id);
+           
             return View(emp);
         }
 
-       
+
 
         public IActionResult IndexAction()
         {
@@ -67,8 +67,8 @@ namespace MVCDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Employees.Add(emp);
-                _context.SaveChanges();
+                _context?.Employees.Add(emp);
+                _context?.SaveChanges();
                 return RedirectToAction("EmployeeList");
             }
             return View();
@@ -77,8 +77,9 @@ namespace MVCDemo.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var emp=_context.Employees.Single(e=>e.Id== id);
+            var emp = _context.Employees?.Single(e => e.Id == id);
             return View(emp);
+
         }
 
         [HttpPost]
@@ -86,7 +87,7 @@ namespace MVCDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Employees.Update(emp);
+                _context.Employees?.Update(emp);
                 _context.SaveChanges();
                 return RedirectToAction("EmployeeList");
             }
@@ -96,7 +97,7 @@ namespace MVCDemo.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var emp = _context.Employees.Single(e => e.Id == id);
+            var emp = _context.Employees?.Single(e => e.Id == id);
             return View(emp);
         }
 
@@ -105,21 +106,22 @@ namespace MVCDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Employees.Remove(emp);
+                _context.Employees?.Remove(emp);
                 _context.SaveChanges();
                 return RedirectToAction("EmployeeList");
             }
             return View(emp);
+
         }
 
         public IActionResult EmployeesByDepartment()
         {
-            var employees=_context.Employees?.Include("Department")
-                          .GroupBy(x=>x.Department.Name)
-                          .Select(y=>new DepartmentTotals
+            var employees = _context.Employees?.Include("Department")
+                          .GroupBy(x => x.Department.Name)
+                          .Select(y => new DepartmentTotals
                           {
-                              Name=y.Key,
-                              Total=y.Count()
+                              Name = y.Key,
+                              Total = y.Count()
                           }).ToList();
             return View(employees);
         }

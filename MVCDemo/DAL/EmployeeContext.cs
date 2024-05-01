@@ -13,5 +13,7 @@ namespace MVCDemo.DAL
         public DbSet<Employee>? Employees { get; set; }
 
         public DbSet<Department>? Departments { get; set; }
+
+        public DbSet<DemoData>? DemoDatas { get; set; }
     }
 }

@@ -8,8 +8,10 @@
     {
         foreach(var items in ViewBag.list)
         {
-           
+           <label>
+               @Html.RadioButton("selectedOptions",items,false,new{id=items})@items
+           </label>
         }
     }
-
+    <input type="submit" value="submit" />
 </div>
