@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCDemo.DAL;
+using MVCDemo.Migrations;
 
 namespace MVCDemo.Controllers
 {
@@ -16,6 +17,17 @@ namespace MVCDemo.Controllers
         {
             var data=_context.DemoDatas.ToList();
             return View(data);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(demodata obj)
+        {
+            var data = _context.DemoDatas.Add(obj);
         }
     }
 }
