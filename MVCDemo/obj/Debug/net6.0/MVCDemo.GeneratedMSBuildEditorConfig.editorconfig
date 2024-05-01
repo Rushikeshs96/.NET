@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Rushikesh\Desktop\github\.NET\MVCDemo
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Rushikesh/Desktop/github/.NET/MVCDemo/Views/DemoData/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb0RhdGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Rushikesh/Desktop/github/.NET/MVCDemo/Views/DemoData/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb0RhdGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Rushikesh/Desktop/github/.NET/MVCDemo/Views/DemoData/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVtb0RhdGFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

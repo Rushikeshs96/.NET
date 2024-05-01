@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MVCDemo.DAL;
 using MVCDemo.Migrations;
+using MVCDemo.Models;
 
 namespace MVCDemo.Controllers
 {
@@ -15,19 +16,37 @@ namespace MVCDemo.Controllers
 
         public IActionResult Index()
         {
-            var data=_context.DemoDatas.ToList();
+            var data = _context.DemoDatas.ToList();
             return View(data);
         }
 
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(demodata obj)
+        public IActionResult Create(DemoData data)
         {
-            var data = _context.DemoDatas.Add(obj);
+            _context.DemoDatas.Add(data);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var data = _context.DemoDatas?.Single(e => e.Id == id);
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(DemoData data)
+        {
+            _context.DemoDatas.Update(data);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

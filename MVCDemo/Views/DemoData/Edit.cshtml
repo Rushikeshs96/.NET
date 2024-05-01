@@ -1,0 +1,48 @@
+﻿@model MVCDemo.Models.DemoData
+
+<h2>Edit DemoData</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmailAdress)
+        @Html.TextBoxFor(model => model.EmailAdress, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.EmailAdress)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PhoneNumber)
+        @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PhoneNumber)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Salary)
+        @Html.TextBoxFor(model => model.Salary, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Salary)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PersonalWebsite)
+        @Html.TextBoxFor(model => model.PersonalWebsite, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.PersonalWebsite)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.HireDate)
+        @Html.TextBoxFor(model => model.HireDate, "{0:yyyy-MM-dd}", new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.HireDate)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gender)
+        @Html.TextBoxFor(model => model.Gender, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Gender)
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+
+
+
+
+}
