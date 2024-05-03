@@ -29,9 +29,13 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public IActionResult Create(DemoData data)
         {
-            _context.DemoDatas.Add(data);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.DemoDatas.Add(data);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
         }
 
         [HttpGet]
@@ -44,9 +48,39 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public IActionResult Edit(DemoData data)
         {
-            _context.DemoDatas.Update(data);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                _context.DemoDatas.Update(data);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int id)
+        {
+            var data = _context.DemoDatas.Single(e => e.Id == id);
+            return View(data);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(DemoData data)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.DemoDatas.Remove(data);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Details(int id)
+        {
+            var data = _context.DemoDatas.Single(e => e.Id == id);
+            return View(data);
         }
     }
 }

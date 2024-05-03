@@ -1,0 +1,66 @@
+﻿@model MVCDemo.Models.DemoData
+
+<div style="font-family:Arial">
+    <h1 style="color:red">Details</h1>
+    <br />
+    <table>
+        <tr>
+            <td>
+                ID
+            </td>
+            <td>
+                @Model.Id
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(m=>m.EmailAdress)
+            </td>
+            <td>
+                @Html.DisplayFor(m=>m.EmailAdress)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Phone Number
+            </td>
+            <td>
+                @Model.PhoneNumber
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Salary
+            </td>
+            <td>
+                @Model.Salary
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Personal Website
+            </td>
+            <td>
+                @Model.PersonalWebsite
+            </td>
+        </tr>
+        <tr>
+            <td>
+                HireDate
+            </td>
+            <td>
+                @Model.HireDate
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender
+            </td>
+            <td>
+                @Model.Gender
+            </td>
+        </tr>
+    </table>
+    <br />
+    @Html.ActionLink("BACK TO INDEX","Index")
+</div>

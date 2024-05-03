@@ -1,6 +1,6 @@
 ﻿@model MVCDemo.Models.DemoData
 
-<h2>Edit DemoData</h2>
+<h2>Delete DemoData</h2>
 
 @using (Html.BeginForm())
 {
@@ -40,14 +40,5 @@
         @Html.ValidationMessageFor(model => model.Gender)
     </div>
 
-<button type="submit" class="btn btn-primary">Edit</button>
+    <button type="submit" class="btn btn-primary">Delete</button>
 }
-
-@*    @Html.EditorForModel()
-
-    <button type="submit" class="btn btn-primary">Edit</button>
-*@
-
-
-
-
