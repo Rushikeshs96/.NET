@@ -16,7 +16,7 @@ namespace MVCDemo.Controllers
 
         public IActionResult Index()
         {
-            Employee emp = new ()
+            Employee emp = new()
             {
                 Id = 1,
                 Name = "rushi",
@@ -31,7 +31,7 @@ namespace MVCDemo.Controllers
         {
 
             var emp = _context.Employees?.SingleOrDefault(e => e.Id == id);
-           
+
             return View(emp);
         }
 
@@ -49,10 +49,23 @@ namespace MVCDemo.Controllers
             return View(list);
         }
 
-        public IActionResult EmployeeList()
+        public IActionResult EmployeeList(String searchBy, String search)
         {
-            List<Employee> emp = _context.Employees.Include(e => e.Department).ToList();
-            return View(emp);
+            //List<Employee> emp = _context.Employees.Include(e => e.Department).ToList();
+            //return View(emp);
+
+            if (searchBy == "Gender")
+            {
+                return View(_context.Employees.Where(x => x.Gender == search || search == null).Include(e=>e.Department).ToList());
+            }
+            else if(searchBy=="DepartmentName"){
+                return View(_context.Employees.Where(x => x.Department.Name == search || search == null).Include(e => e.Department).ToList());
+
+            }
+            else
+            {
+                return View(_context.Employees.Where(x => x.Name.StartsWith(search) || search == null).Include(e => e.Department).ToList());
+            }
         }
 
         [HttpGet]

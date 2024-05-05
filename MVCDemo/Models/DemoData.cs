@@ -29,6 +29,7 @@ namespace MVCDemo.Models
         [DisplayFormat(DataFormatString ="{0:d}")]
         public DateTime? HireDate { get; set; }
 
+        
         public string? Gender { get; set; }
     }
 }
