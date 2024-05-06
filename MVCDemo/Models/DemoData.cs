@@ -5,7 +5,7 @@ using System.Net.Mail;
 
 namespace MVCDemo.Models
 {
-    public class DemoData
+    public partial class DemoData
     {
         [Key]
         [HiddenInput(DisplayValue =false)]
@@ -15,7 +15,7 @@ namespace MVCDemo.Models
         [Display(Name = "Mail Adress")]
         public string? EmailAdress { get; set; }
 
-        [MinLength(5)]
+        [StringLength(10,MinimumLength =10)]
         public string? PhoneNumber { get; set; }
 
         [DataType(DataType.Currency)]
@@ -29,7 +29,7 @@ namespace MVCDemo.Models
         [DisplayFormat(DataFormatString ="{0:d}")]
         public DateTime? HireDate { get; set; }
 
-        
         public string? Gender { get; set; }
     }
+
 }

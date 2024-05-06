@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MVCDemo.Models.Employee>
 @using MVCDemo.Models
 
-@using (Html.BeginForm("Delete", "Employee", FormMethod.Post))
+@using (Html.BeginForm("DeleteMultiple", "Employee", FormMethod.Post))
 {
     <table border="1">
         <thead>
@@ -30,7 +30,32 @@
             </tr>
         </thead>
         <tbody>
-           @Html.DisplayForModel()
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="employeeToDelete" value="employeeToDelete" id="@item.Id" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>item.Gender)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>item.City)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model=>item.Salary)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.DepartmentId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Department.Name)
+                    </td>
+                </tr>
+            }
         </tbody>
     </table>
     <input type="submit" value="Delete Multiple Employees" />

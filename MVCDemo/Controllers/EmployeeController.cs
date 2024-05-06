@@ -134,12 +134,12 @@ namespace MVCDemo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(IEnumerable<int> employeeToDelete)
+        public IActionResult DeleteMultiple(IEnumerable<int> employeeToDelete)
         {
-            var employeesToDelete = _context.Employees.Where(e => employeeToDelete.Contains(e.Id)).ToList();
-            _context.Employees.RemoveRange(employeesToDelete);
+            var employeesToDelete = _context.Employees?.Where(e => employeeToDelete.Contains(e.Id)).ToList();
+            _context.Employees?.RemoveRange(employeesToDelete);
             _context.SaveChanges();
-            return RedirectToAction("DeleteMultiple");
+            return RedirectToAction("Indexfmd");
         }
 
         public IActionResult EmployeesByDepartment()
