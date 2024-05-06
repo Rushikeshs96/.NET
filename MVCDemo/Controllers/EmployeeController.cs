@@ -51,21 +51,27 @@ namespace MVCDemo.Controllers
 
         public IActionResult EmployeeList(String searchBy, String search)
         {
-            //List<Employee> emp = _context.Employees.Include(e => e.Department).ToList();
-            //return View(emp);
 
             if (searchBy == "Gender")
             {
-                return View(_context.Employees.Where(x => x.Gender == search || search == null).Include(e=>e.Department).ToList());
+                return View(_context.Employees?.Where(x => x.Gender == search || search == null).Include(e => e.Department).ToList());
             }
-            else if(searchBy=="DepartmentName"){
-                return View(_context.Employees.Where(x => x.Department.Name == search || search == null).Include(e => e.Department).ToList());
+            else if (searchBy == "DepartmentName")
+            {
+                return View(_context.Employees?.Where(x => x.Department.Name == search || search == null).Include(e => e.Department).ToList());
 
             }
             else
             {
-                return View(_context.Employees.Where(x => x.Name.StartsWith(search) || search == null).Include(e => e.Department).ToList());
+                return View(_context.Employees?.Where(x => x.Name.StartsWith(search) || search == null).Include(e => e.Department).ToList());
             }
+        }
+
+        public IActionResult Indexfmd()
+        {
+
+          var data=_context.Employees.ToList();
+            return View(data);  
         }
 
         [HttpGet]
@@ -80,7 +86,7 @@ namespace MVCDemo.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context?.Employees.Add(emp);
+                _context?.Employees?.Add(emp);
                 _context?.SaveChanges();
                 return RedirectToAction("EmployeeList");
             }
@@ -125,6 +131,15 @@ namespace MVCDemo.Controllers
             }
             return View(emp);
 
+        }
+
+        [HttpPost]
+        public IActionResult Delete(IEnumerable<int> employeeToDelete)
+        {
+            var employeesToDelete = _context.Employees.Where(e => employeeToDelete.Contains(e.Id)).ToList();
+            _context.Employees.RemoveRange(employeesToDelete);
+            _context.SaveChanges();
+            return RedirectToAction("DeleteMultiple");
         }
 
         public IActionResult EmployeesByDepartment()

@@ -12,11 +12,11 @@ namespace MVCDemo.Controllers
         public DepartmentController(EmployeeContext context)
         {
             _context = context;
-        }  
+        }
 
         public IActionResult Index()
         {
-            List<Department> list= _context.Departments.ToList();
+            List<Department> list = _context.Departments.ToList();
             return View(list);
         }
     }

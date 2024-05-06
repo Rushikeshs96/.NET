@@ -15,7 +15,7 @@ namespace MVCDemo.Models
         [Display(Name = "Mail Adress")]
         public string? EmailAdress { get; set; }
 
-        [DataType(DataType.PhoneNumber)]
+        [MinLength(5)]
         public string? PhoneNumber { get; set; }
 
         [DataType(DataType.Currency)]

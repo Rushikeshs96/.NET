@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MVCDemo.Models.Employee>
+@using MVCDemo.Models
+
+@using (Html.BeginForm("Delete", "Employee", FormMethod.Post))
+{
+    <table border="1">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayName("Select")
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=> model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=> model.Gender)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=> model.City)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=> model.Salary)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=> model.DepartmentId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model=> model.Department)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+           @Html.DisplayForModel()
+        </tbody>
+    </table>
+    <input type="submit" value="Delete Multiple Employees" />
+}
