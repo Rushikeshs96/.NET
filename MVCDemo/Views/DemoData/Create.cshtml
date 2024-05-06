@@ -16,6 +16,12 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.ConfirmMail)
+            @Html.TextBoxFor(model => model.ConfirmMail, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ConfirmMail)
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.PhoneNumber)
             @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.PhoneNumber)
