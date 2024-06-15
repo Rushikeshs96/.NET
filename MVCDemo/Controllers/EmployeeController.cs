@@ -9,9 +9,11 @@ namespace MVCDemo.Controllers
     {
         private readonly EmployeeContext _context;
 
+
         public EmployeeController(EmployeeContext context)
         {
             _context = context;
+          
         }
 
         public IActionResult Index()

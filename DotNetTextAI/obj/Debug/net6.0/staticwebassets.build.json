@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "zTRGmfQj7SKGNSKlJJCGX73DzVqqcHHix01sEJ0cNcs=",
+  "Source": "DotNetTextAI",
+  "BasePath": "_content/DotNetTextAI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
