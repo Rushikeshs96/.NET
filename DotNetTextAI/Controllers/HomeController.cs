@@ -15,7 +15,7 @@ namespace DotNetTextAI.Controllers
         {
             string answer = string.Empty;
 
-            var openai = new OpenAIAPI(APIKey);
+            
             CompletionRequest completion = new CompletionRequest
             {
                 Prompt = SearchText,
