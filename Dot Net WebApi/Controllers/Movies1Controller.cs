@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Dot_Net_WebApi.Data;
 using Dot_Net_WebApi.Models;
+using Dot_Net_WebApi.Domain;
 
 namespace Dot_Net_WebApi.Controllers
 {
@@ -22,7 +23,7 @@ namespace Dot_Net_WebApi.Controllers
         }
 
         // GET: api/Movies1
-        [HttpGet]
+        /*[HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> GetMovies()
         {
           if (_context.Movies == null)
@@ -30,6 +31,36 @@ namespace Dot_Net_WebApi.Controllers
               return NotFound();
           }
             return await _context.Movies.ToListAsync();
+        }*/
+
+       /* [HttpGet]
+        public async Task<ActionResult<PagedResult<Movie>>> GetMovies([FromQuery] Pagination pagination)
+        {
+            if (_context.Movies == null)
+            {
+                return NotFound();
+            }
+
+            var totalItems = await _context.Movies.CountAsync();
+            var pagedMovies = await _context.Movies
+                                            .Skip((pagination.PageNumber - 1) * pagination.PageSize)
+                                            .Take(pagination.PageSize)
+                                            .ToListAsync();
+
+            var pagedResult = new PagedResult<Movie>(pagedMovies, totalItems, pagination.PageNumber, pagination.PageSize);
+            return Ok(pagedResult);
+        }*/
+
+        [HttpGet]
+        public async Task<ActionResult<PagedResult<Movie>>> GetMovies([FromQuery] Pagination pagination)
+        {
+            if (_context.Movies == null)
+            {
+                return NotFound();
+            }
+
+            var pagedResult = await _context.Movies.UsePageableAsync(pagination);
+            return Ok(pagedResult);
         }
 
         // GET: api/Movies1/5
