@@ -13,7 +13,6 @@ namespace DotNetTextAI.Controllers
         [HttpPost]
         public async Task<ActionResult> GetAIBasedResult(string SearchText)
         {
-            string APIKey = "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";
             string answer = string.Empty;
 
             var openai = new OpenAIAPI(APIKey);
