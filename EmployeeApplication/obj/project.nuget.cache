@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fJhwftrehG/0NBXDqYPMDXIrjOocxkNGbZs2e9hXUoXMi7JRKXZfHoHoYpxw2QSR/yc0e5S8UakmlehlCojc8g==",
+  "dgSpecHash": "2FPVVZKT9jfKnRxbhIFEioWyNxMEf/LW/EsOoe0zSnlTC9ERXufuBGo/PBrqq3+1EKxCT46y+dC6l1ZA4VHLzA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Rushikesh\\Desktop\\github\\.NET\\EmployeeApplication\\EmployeeApplication.csproj",
   "expectedPackageFiles": [
@@ -24,7 +24,11 @@
     "C:\\Users\\Rushikesh\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\6.0.3\\pomelo.entityframeworkcore.mysql.6.0.3.nupkg.sha512",
     "C:\\Users\\Rushikesh\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\Rushikesh\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.1\\system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
-    "C:\\Users\\Rushikesh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\Rushikesh\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.27\\microsoft.netcore.app.host.win-x64.6.0.27.nupkg.sha512"
   ],
   "logs": []
 }

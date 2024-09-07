@@ -24,7 +24,6 @@ C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\staticweb
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\scopedcss\bundle\Dot Net WebApi.styles.css
-C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\Dot Net WebApi.csproj.CopyComplete
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\Dot Net WebApi.dll
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\refint\Dot Net WebApi.dll
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\Dot Net WebApi.pdb
@@ -254,3 +253,5 @@ C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\bin\Debug\net6.0\System.Ne
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\bin\Debug\net6.0\System.Web.Http.dll
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\bin\Debug\net6.0\System.Web.Http.Cors.dll
 C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\Dot Net WebApi.sourcelink.json
+C:\Users\Rushikesh\Desktop\github\.NET\Dot Net WebApi\obj\Debug\net6.0\Dot Net .DA85432C.Up2Date

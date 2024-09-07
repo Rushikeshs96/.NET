@@ -34,9 +34,10 @@ C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\stat
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\scopedcss\bundle\EmployeeApplication.styles.css
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\scopedcss\projectbundle\EmployeeApplication.bundle.scp.css
-C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\EmployeeApplication.csproj.CopyComplete
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\EmployeeApplication.dll
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\refint\EmployeeApplication.dll
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\EmployeeApplication.pdb
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\EmployeeApplication.genruntimeconfig.cache
 C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\ref\EmployeeApplication.dll
+C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\EmployeeApplication.sourcelink.json
+C:\Users\Rushikesh\Desktop\github\.NET\EmployeeApplication\obj\Debug\net6.0\Employee.0965C143.Up2Date
